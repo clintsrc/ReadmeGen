@@ -110,9 +110,7 @@ function generateMarkdown(data) {
 
 ${data.description}
 
-## Table of Contents (Optional)
-
-If your README is long, add a table of contents to make it easy for users to find what they need.
+## Table of Contents
 
 - [Installation](#installation)
 - [Usage](#usage)
@@ -126,11 +124,8 @@ ${data.installSteps}
 
 ${data.usage}
 
-To add a screenshot, create an \`assets/images\` folder in your repository and upload your screenshot to it. Then, using the relative filepath, add it to your README using the following syntax:
+![alt text](assets/images/screenshot.png)
 
-    \`\`\`md
-    ![alt text](assets/images/screenshot.png)
-    \`\`\`
 
 ## Credits
 
