@@ -9,7 +9,7 @@ import fs from 'fs';
 import generateMarkdown from './utils/generateMarkdown.js';
 
 const banner = 
-`==========================================================
+`=========================gi=================================
 ReadmeGen
 ==========================================================
 Welcome to ReadmeGen! You will receive several prompts for 
@@ -23,13 +23,44 @@ const questions = [
     {
         type: 'input',
         name: 'title',
-        message: 'What is the title?',
+        message: 'What is the project title?',
+        default: 'ReadmeGen', // Default answer
     },
     {
         type: 'input',
-        name: 'location',
-        message: 'What is your location?',
+        name: 'description',
+        message: 'Please enter a description of the project:',
+        default: 'ReadmeGen uses nodejs and the "inquirer" dependency package to prompt you for information used to generate a README.md file for your GitHub project.', // Default answer
     },
+    {
+        type: 'input',
+        name: 'installSteps',
+        message: 'Enter the steps to install the application:',
+        default: '1. Change the project\'s root directory\n2. Install the dependency modules: npm install', // Default answer
+    },
+    {
+        type: 'input',
+        name: 'usage',
+        message: 'Describe how to use the application:',
+        default: '1. Run: node index.js\n2. Answer the prompts\n3. View the generated README.md', // Default answer
+    },
+    {
+        type: 'list',
+        name: 'license',
+        message: 'Would you like to include a license?',
+        choices: [
+            { name: 'None', value: '' },
+            { name: 'Apache 2.0', value: 'apache2' },
+            { name: 'BSD 3-Clause', value: 'bsd' },
+            { name: 'Creative Commons CC BY 4.0', value: 'cc' },
+            { name: 'Eclipse EPL 1.0', value: 'epl' },
+            { name: 'GNU GPL v3', value: 'gpl' },
+            { name: 'MIT', value: 'mit' },
+            { name: 'Mozilla Public License 2.0', value: 'mpl' },
+        ],
+        default: 'bsd',  // DEBUG Preselected
+    },
+
 ];
 
 
@@ -56,6 +87,7 @@ function init() {
     inquirer
     .prompt(questions)
     .then((answers) => {
+         console.log("DEBUG:", answers);
         let readmeContent = generateMarkdown(answers);   // TODO
         writeToFile(outFileName, readmeContent);
 }   )
