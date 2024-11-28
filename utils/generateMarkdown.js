@@ -91,9 +91,13 @@ function renderLicenseSection(license) {
 // explains which license the application is covered under
 function generateMarkdown(data) {
   let licenseBadge = renderLicenseSection(data.license);
+  let licenseText = '';
+  let licenseTOC = ''
 
   if (licenseBadge) {
     licenseBadge = `\n${licenseBadge}`;
+    licenseText = `## License\nThis application is covered under the ${data.license.toUpperCase()} license`;
+    licenseTOC = "\n- [License](#license)";
   }
  
 // a notice is added to the section of the README entitled License that 
@@ -112,8 +116,7 @@ If your README is long, add a table of contents to make it easy for users to fin
 
 - [Installation](#installation)
 - [Usage](#usage)
-- [Credits](#credits)
-- [License](#license)
+- [Credits](#credits)${licenseTOC}
 
 ## Installation
 
@@ -137,7 +140,7 @@ If you used any third-party assets that require attribution, list the creators w
 
 If you followed tutorials, include links to those here as well.
 
-${renderLicenseSection(data.license)}
+${licenseText}
 
 ---
 

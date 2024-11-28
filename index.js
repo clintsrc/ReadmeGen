@@ -9,7 +9,7 @@ import fs from 'fs';
 import generateMarkdown from './utils/generateMarkdown.js';
 
 const banner = 
-`=========================gi=================================
+`==========================================================
 ReadmeGen
 ==========================================================
 Welcome to ReadmeGen! You will receive several prompts for 
