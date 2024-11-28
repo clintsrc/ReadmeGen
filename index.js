@@ -22,8 +22,8 @@ source control repository.
 const questions = [
     {
         type: 'input',
-        name: 'name',
-        message: 'What is your name?',
+        name: 'title',
+        message: 'What is the title?',
     },
     {
         type: 'input',
@@ -32,34 +32,33 @@ const questions = [
     },
 ];
 
+
 // Write the dynamically generated content to the README.md file. 
-// Use a document template to organize and update the README 
-// content with the answers that were provided
-const generateReadme = ({ name, location}) => {
-    let outFileName = "README.md";
+function writeToFile(fileName, data) {
 
-    let data = `TODO Hi, my name's ${name}, I'm in ${location}`;
-
-    fs.writeFile(outFileName, data, (err) => {
+    fs.writeFile(fileName, data, (err) => {
         if (! err) {
-            console.log(`Successfully wrote to file! ${outFileName}`);
+            console.log(`Successfully wrote to file! ${fileName}`);
         } else {
-            console.log(`Error writing to file! ${outFileName}`);
+            console.log(`Error writing to file! ${fileName}`);
         }
     });
+
 }
 
 
 // Initialize app to prompt the user for the README content and
 //    to write to the README.md
 function init() {
+    const outFileName = "README.md";
     console.log(banner);
-
-    generateMarkdown("");   // TODO
 
     inquirer
     .prompt(questions)
-    .then((answers) => generateReadme(answers))
+    .then((answers) => {
+        let readmeContent = generateMarkdown(answers);   // TODO
+        writeToFile(outFileName, readmeContent);
+}   )
     .catch((err) => console.error(err));
 }
 
