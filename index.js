@@ -24,6 +24,15 @@ professional README.md file that you can include with your
 source control repository.
 `;
 
+// Default answers for testing and debugging
+const defaultAnswers = [
+    'ReadmeGen',
+    'ReadmeGen uses nodejs and the "inquirer" dependency package to prompt you for information used to generate a README.md file for your GitHub project.',
+    '1. Change the project\'s root directory\n2. Install the dependency modules: npm install',
+    '1. Run: node index.js\n2. Answer the prompts\n3. View the generated README.md',
+    'gpl',
+];
+
 // An array of prompts used by the inquirer module
 const questions = [
     {
@@ -31,29 +40,29 @@ const questions = [
         name: 'title',
         message: 'What is the project title?',
         // For testing:
-        default: 'ReadmeGen',
+        default: defaultAnswers[0],
     },
     {
         type: 'input',
         name: 'description',
         message: 'Please enter a description of the project:',
-        // For testing:
-        default: 'ReadmeGen uses nodejs and the "inquirer" dependency package to prompt you for information used to generate a README.md file for your GitHub project.',
+        default: defaultAnswers[1],
     },
     {
         type: 'input',
         name: 'installSteps',
         message: 'Enter the steps to install the application:',
         // For testing:
-        default: '1. Change the project\'s root directory\n2. Install the dependency modules: npm install',
+        default: defaultAnswers[2],
     },
     {
         type: 'input',
         name: 'usage',
         message: 'Describe how to use the application:',
         // For testing:
-        default: '1. Run: node index.js\n2. Answer the prompts\n3. View the generated README.md',
+        default: defaultAnswers[3],
     },
+    // TODO credits
     {
         type: 'list',
         name: 'license',
@@ -69,8 +78,12 @@ const questions = [
             { name: 'Mozilla Public License 2.0', value: 'mpl' },
         ],
         // For testing:
-        default: 'gpl',
+        default: defaultAnswers[4],
     },
+    // TODO: Contributing:
+    //'Guidelines\nEnsure your code follows the project\'s coding standards.\nWrite clear and concise commit messages.\nIf your changes include new features, please update the documentation accordingly.\nIf you are fixing a bug, please include a test to verify the fix.\nThank you for your contributions!\n'
+    // TODO: Tests (instructions)
+    // TODO: Questions
 
 ];
 
