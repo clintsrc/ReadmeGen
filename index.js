@@ -14,8 +14,10 @@ import inquirer from 'inquirer';
 import fs from 'fs';
 import generateMarkdown from './utils/generateMarkdown.js';
 
-const banner = 
-`==========================================================
+const DEBUG = false;
+
+const banner =
+    `==========================================================
 ReadmeGen
 ==========================================================
 Welcome to ReadmeGen! You will receive several prompts for 
@@ -25,16 +27,21 @@ source control repository.
 `;
 
 // Default answers for testing and debugging
-const defaultAnswers = [
-    'ReadmeGen',
-    'ReadmeGen uses nodejs and the "inquirer" dependency package to prompt you for information used to generate a README.md file for your GitHub project.',
-    '1. Change the project\'s root directory\n2. Install the dependency modules: npm install',
-    '1. Run: node index.js\n2. Answer the prompts\n3. View the generated README.md',
-    'gpl',
-    'Guidelines:  Ensure your code follows the project\'s coding standards.  Write clear and concise commit messages.  If your changes include new features, please update the documentation accordingly.  If you are fixing a bug, please include a test to verify the fix.  Thank you for your contributions!',
-    'Test instructions:  1. Try generating a README with license, and another that has no license (select None)',
-    'TODO:',
-];
+let defaultAnswers = [];
+
+if (DEBUG) {
+    defaultAnswers = [
+        'ReadmeGen',
+        'ReadmeGen uses nodejs and the "inquirer" dependency package to prompt you for information used to generate a README.md file for your GitHub project.',
+        '1. Change the project\'s root directory\n2. Install the dependency modules: npm install\n![alt text](assets/images/screenshot.png)',
+        '1. Run: node index.js\n2. Answer the prompts\n3. View the generated README.md',
+        'mit',
+        'Guidelines:  Ensure your code follows the project\'s coding standards.  Write clear and concise commit messages.  If your changes include new features, please update the documentation accordingly.  If you are fixing a bug, please include a test to verify the fix.  Thank you for your contributions!',
+        'Test instructions:  1. Try generating a README with license, and another that has no license (select None).\n2. For the contact questions try these account entry combinations: both, neither, github only, email only',
+        'clintsrc',
+        'clinton.alan.jones@gmail.com',
+    ];
+}
 
 // An array of prompts used by the inquirer module
 const questions = [
@@ -92,9 +99,15 @@ const questions = [
     },
     {
         type: 'input',
-        name: 'questions',
-        message: 'TODO:',
+        name: 'questionsGitHubAcct',
+        message: 'Do you want to enter your github account to add to the Questions section?',
         default: defaultAnswers[7],
+    },
+    {
+        type: 'input',
+        name: 'questionsEmail',
+        message: 'Do you want to enter your email account to add to the Questions section?',
+        default: defaultAnswers[8],
     },
 ];
 
@@ -109,8 +122,8 @@ const questions = [
 function writeToFile(fileName, data) {
 
     fs.writeFile(fileName, data, (err) => {
-        if (! err) {
-            console.log(`Successfully wrote to file! ${fileName}`);
+        if (!err) {
+            console.log(`Successfully written! ${fileName}`);
         } else {
             console.log(`Error writing to file! ${fileName}`);
         }
@@ -130,14 +143,15 @@ function init() {
     console.log(banner);
 
     inquirer
-    .prompt(questions)
-    .then((answers) => {
-        // For testing:
-        console.log("DEBUG:", answers);
-        let readmeContent = generateMarkdown(answers);
-        writeToFile(outFileName, readmeContent);
-}   )
-    .catch((err) => console.error(err));
+        .prompt(questions)
+        .then((answers) => {
+            if (DEBUG) {
+                console.log("answers array:", answers);
+            }
+            let readmeContent = generateMarkdown(answers);
+            writeToFile(outFileName, readmeContent);
+        })
+        .catch((err) => console.error(err));
 }
 
 // The app starts here

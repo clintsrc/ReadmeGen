@@ -1,10 +1,4 @@
 /*
-TODO:
-Video walkthrough:
-https://coding-boot-camp.github.io/full-stack/computer-literacy/video-submission-guide
-*/
-
-/*
  * renderLicenseBadge()
  *
  * A function that returns a license badge based on which license is passed in
@@ -147,6 +141,34 @@ function renderLicenseSection(license) {
 
 
 /*
+ * renderQuestionsSection()
+ *
+ * A function that returns the Questions section for the README to 
+ * that reaches out to answer any questions by optionally providing a 
+ * github account with a link to that GitHub profile, and another option for
+ * an email account that provides a mailto link
+ * 
+ * If neither contact option is provided the Questions section is empty
+ * 
+ */
+function renderQuestionsSection(ghUser, emailUser) {
+  let questionsSectionText = '';
+  if ((ghUser) || (emailUser)) {
+    questionsSectionText = "If you have any questions, feel free to reach out: \n";
+
+    if (ghUser) {
+      questionsSectionText += `- GitHub: [${ghUser}](https://github.com/${ghUser})  \n`;
+    }
+
+    if (emailUser) {
+      questionsSectionText += `- Email: ${emailUser}`;
+    }
+  }
+  return questionsSectionText;
+}
+
+
+/*
  * renderLicenseSection()
  *
  * a function to generate markdown for the README using data from
@@ -159,8 +181,9 @@ function renderLicenseSection(license) {
  */
 
 function generateMarkdown(data) {
-  let licenseBadge = renderLicenseBadge(data.license);
-  let licenseSection = renderLicenseSection(data.license);
+  const licenseBadge = renderLicenseBadge(data.license);
+  const licenseSection = renderLicenseSection(data.license)
+  const questionsSection = renderQuestionsSection(data.questionsGitHubAcct, data.questionsEmail);;
 
   // regex to replace all double spaces with 
   //   double-spaces ( {2}) and a line feed: this is the markup convention 
@@ -195,8 +218,6 @@ ${data.installSteps}
 
 ${data.usage}
 
-![alt text](assets/images/screenshot.png)
-
 ## License
 
 ${licenseSection}
@@ -211,13 +232,8 @@ ${data.tests}
 
 ## Questions
 
-${data.questions}
-TODO:
-WHEN I enter my GitHub username
-THEN this is added to the section of the README entitled Questions, with a link to my GitHub profile
+${questionsSection}
 
-WHEN I enter my email address
-THEN this is added to the section of the README entitled Questions, with instructions on how to reach me with additional questions
 `;
 }
 
