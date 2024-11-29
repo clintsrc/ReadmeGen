@@ -1,176 +1,169 @@
-// TODO: Create a function that returns a license badge based on which license is passed in
-// If there is no license, return an empty string
+/*
+TODO:
+Video walkthrough:
+https://coding-boot-camp.github.io/full-stack/computer-literacy/video-submission-guide
+*/
+
 /*
  * renderLicenseBadge()
  *
+ * A function that returns a license badge based on which license is passed in
+ * The badge formatted string is: [BADGE](URL)
+ *    e.g. 
+ * [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
  *
+ * If there is no license, return an empty string
  * 
  */
 
 function renderLicenseBadge(license) {
-  console.log("TODO: renderLicenseBadge");
-
   let licenseBadge = '';
 
-if (license) {
+  if (license) {
 
-  switch (license) {
-    case 'apache2':
-      licenseBadge = "![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)";
-      break;
-    case 'bsd':
-      licenseBadge = "![License](https://img.shields.io/badge/License-BSD_3--Clause-blue.svg)";
-      break;
-    case 'cc':
-      licenseBadge = "![License: CC BY 4.0](https://img.shields.io/badge/License-CC_BY_4.0-lightgrey.svg)";
-      break;
-    case 'epl':
-      licenseBadge = "![License](https://img.shields.io/badge/License-EPL_1.0-red.svg)";
-      break;
-    case 'gpl':
-      licenseBadge = "![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)";
-      break;
-    case 'mit':
-      licenseBadge = "![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)";
-      break;
-    case 'mpl':
-      licenseBadge = "![License: MPL 2.0](https://img.shields.io/badge/License-MPL_2.0-brightgreen.svg)";
-      break;
+    switch (license) {
+      case 'apache2':
+        licenseBadge = "![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)";
+        break;
+      case 'bsd':
+        licenseBadge = "![License](https://img.shields.io/badge/License-BSD_3--Clause-blue.svg)";
+        break;
+      case 'cc':
+        licenseBadge = "![License: CC BY 4.0](https://img.shields.io/badge/License-CC_BY_4.0-lightgrey.svg)";
+        break;
+      case 'epl':
+        licenseBadge = "![License](https://img.shields.io/badge/License-EPL_1.0-red.svg)";
+        break;
+      case 'gpl':
+        licenseBadge = "![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)";
+        break;
+      case 'mit':
+        licenseBadge = "![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)";
+        break;
+      case 'mpl':
+        licenseBadge = "![License: MPL 2.0](https://img.shields.io/badge/License-MPL_2.0-brightgreen.svg)";
+        break;
+      // default is already an empty string, no default case is needed
+    }
+
   }
-
-}
 
   return licenseBadge;
 }
 
 
-// TODO: Create a function that returns the license link
-// If there is no license, return an empty string
 /*
  * renderLicenseLink()
  *
- *
+ * A function that returns the license link if the user chose one
+ * 
+ * If there is no license, return an empty string
  * 
  */
 
 function renderLicenseLink(license) {
-  console.log("TODO: renderLicenseLink");
-
   let licenseLink = '';
 
-if (license) {
+  if (license) {
 
-  switch (license) {
-    case 'apache2':
-      licenseLink = "https://opensource.org/licenses/Apache-2.0";
-      break;
-    case 'bsd':
-      licenseLink = "https://opensource.org/licenses/BSD-3-Clause";
-      break;
-    case 'cc':
-      licenseLink = "https://creativecommons.org/licenses/by/4.0/";
-      break;
-    case 'epl':
-      licenseLink = "https://opensource.org/licenses/EPL-1.0";
-      break;
-    case 'gpl':
-      licenseLink = "https://www.gnu.org/licenses/gpl-3.0";
-      break;
-    case 'mit':
-      licenseLink = "https://opensource.org/licenses/MIT";
-      break;
-    case 'mpl':
-      licenseLink = "https://opensource.org/licenses/MPL-2.0";
-      break;
+    switch (license) {
+      case 'apache2':
+        licenseLink = "https://opensource.org/licenses/Apache-2.0";
+        break;
+      case 'bsd':
+        licenseLink = "https://opensource.org/licenses/BSD-3-Clause";
+        break;
+      case 'cc':
+        licenseLink = "https://creativecommons.org/licenses/by/4.0/";
+        break;
+      case 'epl':
+        licenseLink = "https://opensource.org/licenses/EPL-1.0";
+        break;
+      case 'gpl':
+        licenseLink = "https://www.gnu.org/licenses/gpl-3.0";
+        break;
+      case 'mit':
+        licenseLink = "https://opensource.org/licenses/MIT";
+        break;
+      case 'mpl':
+        licenseLink = "https://opensource.org/licenses/MPL-2.0";
+        break;
+      // default is already an empty string, no default case is needed
+    }
+
   }
-
-}
 
   return licenseLink;
 }
 
-// TODO: Create a function that returns the license section of README
-// If there is no license, return an empty string
-// Otherwise return its badge string formatted string: [BADGE](URL)
-// e.g. 
-// [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
 /*
  * renderLicenseSection()
  *
- *
+ * A function that returns the license section for the README entitled 
+ * License that explains which license the application is covered under
+ * and it links the license url
+ * 
+ * If there is no license, return an empty string
  * 
  */
 
 function renderLicenseSection(license) {
-  console.log("TODO: renderLicenseSection");
   const licenseLink = renderLicenseLink(license);
   let licenseNameText = '' // a friendly name for the link text
   let licenseSectionText = '';
 
-if (license) {
+  if (license) {
 
+    switch (license) {
+      case 'apache2':
+        licenseNameText = 'Apache 2.0';
+        break;
+      case 'bsd':
+        licenseNameText = 'BSD 3-Clause';
+        break;
+      case 'cc':
+        licenseNameText = 'Creative Commons CC BY 4.0';
+        break;
+      case 'epl':
+        licenseNameText = 'Eclipse EPL 1.0';
+        break;
+      case 'gpl':
+        licenseNameText = 'GNU GPL v3';
+        break;
+      case 'mit':
+        licenseNameText = 'MIT';
+        break;
+      case 'mpl':
+        licenseNameText = 'Mozilla Public License 2.0';
+        break;
+      // default is already an empty string, no default case is needed
+    }
 
-
-  switch (license) {
-    case 'apache2':
-      licenseNameText = 'Apache 2.0';
-      break;
-    case 'bsd':
-      licenseNameText = 'BSD 3-Clause';
-      break;
-    case 'cc':
-      licenseNameText = 'Creative Commons CC BY 4.0';
-      break;
-    case 'epl':
-      licenseNameText = 'Eclipse EPL 1.0';
-      break;
-    case 'gpl':
-      licenseNameText = 'GNU GPL v3';
-      break;
-    case 'mit':
-      licenseNameText = 'MIT';
-      break;
-    case 'mpl':
-      licenseNameText = 'Mozilla Public License 2.0';
-      break;
+    licenseSectionText = `This application is covered under the [${licenseNameText}](${licenseLink}) license`;
   }
-
-  licenseSectionText = `## License\nThis application is covered under the [${licenseNameText}](${licenseLink}) license`;
-}
   return licenseSectionText;
 }
 
-// TODO: Create a function to generate markdown for README
-// WHEN I choose a license for my application from a list of options
-// THEN a badge for that license is added near the top of the README and 
-// a notice is added to the section of the README entitled License that 
-// explains which license the application is covered under
+
 /*
  * renderLicenseSection()
  *
- *
+ * a function to generate markdown for the README using data from
+ * user input
+ * 
+ * If the user specified a license:
+ *  - a badge for that license is added near the top of the README
+ *  - a License section is added to the readme
  * 
  */
-
-// let licenseBadge = renderLicenseBadge(license); // returns an empty string if 'None' was selected
-
-// if (licenseBadge) {
-//   licenseBadge = 
-//     `[${licenseBadge}](${renderLicenseLink(license)})`
-// }
 
 function generateMarkdown(data) {
   let licenseBadge = renderLicenseBadge(data.license);
   let licenseSection = renderLicenseSection(data.license);
-  let licenseTOCItem = '' // handle the TOC for the license item
 
-  if (licenseSection) {
-    licenseTOCItem = "\n- [License](#license)";
-  }
- 
-// a notice is added to the section of the README entitled License that 
-// explains which license the application is covered under
-
+  // populate a template literal string with the user input to
+  // represent the README content, then return the content here
   return `
 # ${data.title} ${licenseBadge}
 
@@ -182,7 +175,12 @@ ${data.description}
 
 - [Installation](#installation)
 - [Usage](#usage)
-- [Credits](#credits)${licenseTOCItem}
+- [Credits](#credits)
+- [License](#license)
+- [Contributing](#contributing)
+- [Tests](#tests)
+- [Questions](#questions)
+
 
 ## Installation
 
@@ -197,23 +195,33 @@ ${data.usage}
 
 ## Credits
 
+TODO
 List your collaborators, if any, with links to their GitHub profiles.
 
 If you used any third-party assets that require attribution, list the creators with links to their primary web presence in this section.
 
 If you followed tutorials, include links to those here as well.
 
+## License
+
 ${licenseSection}
 
-## Features
+## Contributing
 
-If your project has a lot of features, list them here.
-
-## How to Contribute
-
+TODO
 If you created an application or package and would like other developers to contribute it, you can include guidelines for how to do so. The [Contributor Covenant](https://www.contributor-covenant.org/) is an industry standard, but you can always write your own if you'd prefer.
 
 ## Tests
+TODO
+
+## Questions
+
+TODO:
+WHEN I enter my GitHub username
+THEN this is added to the section of the README entitled Questions, with a link to my GitHub profile
+
+WHEN I enter my email address
+THEN this is added to the section of the README entitled Questions, with instructions on how to reach me with additional questions
 `;
 }
 
