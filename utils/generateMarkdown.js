@@ -1,43 +1,64 @@
 // TODO: Create a function that returns a license badge based on which license is passed in
 // If there is no license, return an empty string
+/*
+ * renderLicenseBadge()
+ *
+ *
+ * 
+ */
+
 function renderLicenseBadge(license) {
   console.log("TODO: renderLicenseBadge");
 
   let licenseBadge = '';
 
+if (license) {
+
   switch (license) {
-    case 'apache2': // https://opensource.org/licenses/Apache-2.0
+    case 'apache2':
       licenseBadge = "![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)";
       break;
-    case 'bsd': // https://opensource.org/licenses/BSD-3-Clause
+    case 'bsd':
       licenseBadge = "![License](https://img.shields.io/badge/License-BSD_3--Clause-blue.svg)";
       break;
-    case 'cc':  // https://creativecommons.org/licenses/by/4.0/
+    case 'cc':
       licenseBadge = "![License: CC BY 4.0](https://img.shields.io/badge/License-CC_BY_4.0-lightgrey.svg)";
       break;
-    case 'epl':  // https://opensource.org/licenses/EPL-1.0
+    case 'epl':
       licenseBadge = "![License](https://img.shields.io/badge/License-EPL_1.0-red.svg)";
       break;
-    case 'gpl':  // https://www.gnu.org/licenses/gpl-3.0
+    case 'gpl':
       licenseBadge = "![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)";
       break;
-    case 'mit': // https://opensource.org/licenses/MIT
+    case 'mit':
       licenseBadge = "![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)";
       break;
-    case 'mpl':  // https://opensource.org/licenses/MPL-2.0
+    case 'mpl':
       licenseBadge = "![License: MPL 2.0](https://img.shields.io/badge/License-MPL_2.0-brightgreen.svg)";
       break;
   }
 
+}
+
   return licenseBadge;
 }
 
+
 // TODO: Create a function that returns the license link
 // If there is no license, return an empty string
+/*
+ * renderLicenseLink()
+ *
+ *
+ * 
+ */
+
 function renderLicenseLink(license) {
   console.log("TODO: renderLicenseLink");
 
   let licenseLink = '';
+
+if (license) {
 
   switch (license) {
     case 'apache2':
@@ -63,6 +84,8 @@ function renderLicenseLink(license) {
       break;
   }
 
+}
+
   return licenseLink;
 }
 
@@ -71,17 +94,50 @@ function renderLicenseLink(license) {
 // Otherwise return its badge string formatted string: [BADGE](URL)
 // e.g. 
 // [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+/*
+ * renderLicenseSection()
+ *
+ *
+ * 
+ */
+
 function renderLicenseSection(license) {
   console.log("TODO: renderLicenseSection");
+  const licenseLink = renderLicenseLink(license);
+  let licenseNameText = '' // a friendly name for the link text
+  let licenseSectionText = '';
 
-  let licenseBadge = renderLicenseBadge(license); // returns an empty string if 'None' was selected
+if (license) {
 
-  if (licenseBadge) {
-    licenseBadge = 
-      `[${licenseBadge}](${renderLicenseLink(license)})`
+
+
+  switch (license) {
+    case 'apache2':
+      licenseNameText = 'Apache 2.0';
+      break;
+    case 'bsd':
+      licenseNameText = 'BSD 3-Clause';
+      break;
+    case 'cc':
+      licenseNameText = 'Creative Commons CC BY 4.0';
+      break;
+    case 'epl':
+      licenseNameText = 'Eclipse EPL 1.0';
+      break;
+    case 'gpl':
+      licenseNameText = 'GNU GPL v3';
+      break;
+    case 'mit':
+      licenseNameText = 'MIT';
+      break;
+    case 'mpl':
+      licenseNameText = 'Mozilla Public License 2.0';
+      break;
   }
 
-  return licenseBadge;
+  licenseSectionText = `## License\nThis application is covered under the [${licenseNameText}](${licenseLink}) license`;
+}
+  return licenseSectionText;
 }
 
 // TODO: Create a function to generate markdown for README
@@ -89,22 +145,34 @@ function renderLicenseSection(license) {
 // THEN a badge for that license is added near the top of the README and 
 // a notice is added to the section of the README entitled License that 
 // explains which license the application is covered under
-function generateMarkdown(data) {
-  let licenseBadge = renderLicenseSection(data.license);
-  let licenseText = '';
-  let licenseTOC = ''
+/*
+ * renderLicenseSection()
+ *
+ *
+ * 
+ */
 
-  if (licenseBadge) {
-    licenseBadge = `\n${licenseBadge}`;
-    licenseText = `## License\nThis application is covered under the ${data.license.toUpperCase()} license`;
-    licenseTOC = "\n- [License](#license)";
+// let licenseBadge = renderLicenseBadge(license); // returns an empty string if 'None' was selected
+
+// if (licenseBadge) {
+//   licenseBadge = 
+//     `[${licenseBadge}](${renderLicenseLink(license)})`
+// }
+
+function generateMarkdown(data) {
+  let licenseBadge = renderLicenseBadge(data.license);
+  let licenseSection = renderLicenseSection(data.license);
+  let licenseTOCItem = '' // handle the TOC for the license item
+
+  if (licenseSection) {
+    licenseTOCItem = "\n- [License](#license)";
   }
  
 // a notice is added to the section of the README entitled License that 
 // explains which license the application is covered under
 
   return `
-# ${data.title}${licenseBadge}
+# ${data.title} ${licenseBadge}
 
 ## Description
 
@@ -114,7 +182,7 @@ ${data.description}
 
 - [Installation](#installation)
 - [Usage](#usage)
-- [Credits](#credits)${licenseTOC}
+- [Credits](#credits)${licenseTOCItem}
 
 ## Installation
 
@@ -135,17 +203,7 @@ If you used any third-party assets that require attribution, list the creators w
 
 If you followed tutorials, include links to those here as well.
 
-${licenseText}
-
----
-
-🏆 The previous sections are the bare minimum, and your project will ultimately determine the content of this document. You might also want to consider adding the following sections.
-
-## Badges
-
-![badmath](https://img.shields.io/github/languages/top/lernantino/badmath)
-
-Badges aren't necessary, per se, but they demonstrate street cred. Badges let other developers know that you know what you're doing. Check out the badges hosted by [shields.io](https://shields.io/). You may not understand what they all represent now, but you will in time.
+${licenseSection}
 
 ## Features
 

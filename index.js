@@ -1,5 +1,11 @@
 /*
- * README.md: https://coding-boot-camp.github.io/full-stack/github/professional-readme-guide
+ * ReadmeGen
+ * 
+ * Generates markdown for a source repository README determined
+ * by the user's reponses to various prompts.
+ * 
+ * The README.md template used is based on: 
+ *    https://coding-boot-camp.github.io/full-stack/github/professional-readme-guide
  * 
  */
 
@@ -18,31 +24,35 @@ professional README.md file that you can include with your
 source control repository.
 `;
 
-// An array of questions for user input via the inquirer module
+// An array of prompts used by the inquirer module
 const questions = [
     {
         type: 'input',
         name: 'title',
         message: 'What is the project title?',
-        default: 'ReadmeGen', // Default answer
+        // For testing:
+        default: 'ReadmeGen',
     },
     {
         type: 'input',
         name: 'description',
         message: 'Please enter a description of the project:',
-        default: 'ReadmeGen uses nodejs and the "inquirer" dependency package to prompt you for information used to generate a README.md file for your GitHub project.', // Default answer
+        // For testing:
+        default: 'ReadmeGen uses nodejs and the "inquirer" dependency package to prompt you for information used to generate a README.md file for your GitHub project.',
     },
     {
         type: 'input',
         name: 'installSteps',
         message: 'Enter the steps to install the application:',
-        default: '1. Change the project\'s root directory\n2. Install the dependency modules: npm install', // Default answer
+        // For testing:
+        default: '1. Change the project\'s root directory\n2. Install the dependency modules: npm install',
     },
     {
         type: 'input',
         name: 'usage',
         message: 'Describe how to use the application:',
-        default: '1. Run: node index.js\n2. Answer the prompts\n3. View the generated README.md', // Default answer
+        // For testing:
+        default: '1. Run: node index.js\n2. Answer the prompts\n3. View the generated README.md',
     },
     {
         type: 'list',
@@ -58,13 +68,20 @@ const questions = [
             { name: 'MIT', value: 'mit' },
             { name: 'Mozilla Public License 2.0', value: 'mpl' },
         ],
-        default: 'bsd',  // DEBUG Preselected
+        // For testing:
+        default: 'gpl',
     },
 
 ];
 
 
-// Write the dynamically generated content to the README.md file. 
+/*
+ * writeToFile()
+ *
+ * Write dynamically generated content to the README.md file.
+ * Report success, or failure if detected
+ *
+ */
 function writeToFile(fileName, data) {
 
     fs.writeFile(fileName, data, (err) => {
@@ -78,8 +95,12 @@ function writeToFile(fileName, data) {
 }
 
 
-// Initialize app to prompt the user for the README content and
-//    to write to the README.md
+/*
+ * init()
+ *
+ * Initialize the app to prompt the user for the README content and
+ *
+ */
 function init() {
     const outFileName = "README.md";
     console.log(banner);
@@ -87,12 +108,13 @@ function init() {
     inquirer
     .prompt(questions)
     .then((answers) => {
-         console.log("DEBUG:", answers);
-        let readmeContent = generateMarkdown(answers);   // TODO
+        // For testing:
+        // console.log("DEBUG:", answers);
+        let readmeContent = generateMarkdown(answers);
         writeToFile(outFileName, readmeContent);
 }   )
     .catch((err) => console.error(err));
 }
 
-// Function call to initialize app.
+// The app starts here
 init();
