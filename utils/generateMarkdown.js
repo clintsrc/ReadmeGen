@@ -162,6 +162,12 @@ function generateMarkdown(data) {
   let licenseBadge = renderLicenseBadge(data.license);
   let licenseSection = renderLicenseSection(data.license);
 
+  // regex to replace all double spaces with 
+  //   double-spaces ( {2}) and a line feed: this is the markup convention 
+  //   for linefeeds
+  let description = data.description.replace(/ {2}/g, "  \n");
+  let contributing = data.contributing.replace(/ {2}/g, "  \n");
+
   // populate a template literal string with the user input to
   // represent the README content, then return the content here
   return `
@@ -169,13 +175,12 @@ function generateMarkdown(data) {
 
 ## Description
 
-${data.description}
+${description}
 
 ## Table of Contents
 
 - [Installation](#installation)
 - [Usage](#usage)
-- [Credits](#credits)
 - [License](#license)
 - [Contributing](#contributing)
 - [Tests](#tests)
@@ -192,30 +197,21 @@ ${data.usage}
 
 ![alt text](assets/images/screenshot.png)
 
-
-## Credits
-
-TODO
-List your collaborators, if any, with links to their GitHub profiles.
-
-If you used any third-party assets that require attribution, list the creators with links to their primary web presence in this section.
-
-If you followed tutorials, include links to those here as well.
-
 ## License
 
 ${licenseSection}
 
 ## Contributing
 
-TODO
-If you created an application or package and would like other developers to contribute it, you can include guidelines for how to do so. The [Contributor Covenant](https://www.contributor-covenant.org/) is an industry standard, but you can always write your own if you'd prefer.
+${contributing}
 
 ## Tests
-TODO
+
+${data.tests}
 
 ## Questions
 
+${data.questions}
 TODO:
 WHEN I enter my GitHub username
 THEN this is added to the section of the README entitled Questions, with a link to my GitHub profile

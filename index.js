@@ -31,6 +31,9 @@ const defaultAnswers = [
     '1. Change the project\'s root directory\n2. Install the dependency modules: npm install',
     '1. Run: node index.js\n2. Answer the prompts\n3. View the generated README.md',
     'gpl',
+    'Guidelines:  Ensure your code follows the project\'s coding standards.  Write clear and concise commit messages.  If your changes include new features, please update the documentation accordingly.  If you are fixing a bug, please include a test to verify the fix.  Thank you for your contributions!',
+    'Test instructions:  1. Try generating a README with license, and another that has no license (select None)',
+    'TODO:',
 ];
 
 // An array of prompts used by the inquirer module
@@ -39,7 +42,6 @@ const questions = [
         type: 'input',
         name: 'title',
         message: 'What is the project title?',
-        // For testing:
         default: defaultAnswers[0],
     },
     {
@@ -52,17 +54,14 @@ const questions = [
         type: 'input',
         name: 'installSteps',
         message: 'Enter the steps to install the application:',
-        // For testing:
         default: defaultAnswers[2],
     },
     {
         type: 'input',
         name: 'usage',
         message: 'Describe how to use the application:',
-        // For testing:
         default: defaultAnswers[3],
     },
-    // TODO credits
     {
         type: 'list',
         name: 'license',
@@ -77,14 +76,26 @@ const questions = [
             { name: 'MIT', value: 'mit' },
             { name: 'Mozilla Public License 2.0', value: 'mpl' },
         ],
-        // For testing:
         default: defaultAnswers[4],
     },
-    // TODO: Contributing:
-    //'Guidelines\nEnsure your code follows the project\'s coding standards.\nWrite clear and concise commit messages.\nIf your changes include new features, please update the documentation accordingly.\nIf you are fixing a bug, please include a test to verify the fix.\nThank you for your contributions!\n'
-    // TODO: Tests (instructions)
-    // TODO: Questions
-
+    {
+        type: 'input',
+        name: 'contributing',
+        message: 'Describe guidelines for contributions:',
+        default: defaultAnswers[5],
+    },
+    {
+        type: 'input',
+        name: 'tests',
+        message: 'Provide test instructions:',
+        default: defaultAnswers[6],
+    },
+    {
+        type: 'input',
+        name: 'questions',
+        message: 'TODO:',
+        default: defaultAnswers[7],
+    },
 ];
 
 
@@ -122,7 +133,7 @@ function init() {
     .prompt(questions)
     .then((answers) => {
         // For testing:
-        // console.log("DEBUG:", answers);
+        console.log("DEBUG:", answers);
         let readmeContent = generateMarkdown(answers);
         writeToFile(outFileName, readmeContent);
 }   )
