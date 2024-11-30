@@ -24,7 +24,8 @@ ReadmeGen
 Welcome to ReadmeGen! You will receive several prompts for 
 information that will be used to dynamically generate a 
 professional README.md file that you can include with your 
-source control repository.
+source control repository. Use double-spaces to indicate
+line breaks.
 `;
 
 // Default answers for testing and debugging
@@ -34,8 +35,8 @@ if (DEBUG) {
     defaultAnswers = [
         'ReadmeGen',
         'ReadmeGen uses nodejs and the "inquirer" dependency package to prompt you for information used to generate a README.md file for your GitHub project.',
-        '1. Change the project\'s root directory  2. Install the dependency modules: npm install  ![alt text](assets/images/screenshot.png)',
-        '1. Run: node src/index.js  2. Answer the prompts  3. View the generated README.md  [Demonstration Video](https://drive.google.com/file/d/1g8EP_mkyd3oHk4iQe3Qgrvbv_yjhvNCx/view)',
+        '1. Change the project\'s root directory  2. Install the dependency modules: npm install  ![ReadmeGen screenshot](assets/images/screenshot.png)',
+        '1. Run: node src/index.js  2. Answer the prompts  3. View the generated README.md  * See the [ReadmeGen Walkthrough](https://drive.google.com/file/d/1LaERyMDhP6-J8q0OTHyf95QkQvJzfBkp/view)  * Here\'s the walkthrough [output](examples/README.md) file',
         'mit',
         'Guidelines:  Ensure your code follows the project\'s coding standards.  Write clear and concise commit messages.  If your changes include new features, please update the documentation accordingly.  If you are fixing a bug, please include a test to verify the fix.  Thank you for your contributions!',
         'Test instructions:  1. Try generating a README with license, and another that has no license (select None).  2. For the contact questions try these account entry combinations: both, neither, github only, email only',
