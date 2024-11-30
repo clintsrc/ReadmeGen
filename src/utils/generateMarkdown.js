@@ -1,10 +1,4 @@
 /*
-TODO:
-Video walkthrough:
-https://coding-boot-camp.github.io/full-stack/computer-literacy/video-submission-guide
-*/
-
-/*
  * renderLicenseBadge()
  *
  * A function that returns a license badge based on which license is passed in
@@ -18,6 +12,7 @@ https://coding-boot-camp.github.io/full-stack/computer-literacy/video-submission
 
 function renderLicenseBadge(license) {
   let licenseBadge = '';
+  const licenseLink = renderLicenseLink(license);
 
   if (license) {
 
@@ -45,6 +40,8 @@ function renderLicenseBadge(license) {
         break;
       // default is already an empty string, no default case is needed
     }
+   // [![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
+    licenseBadge = `[${licenseBadge}](${licenseLink})`;
 
   }
 
@@ -147,6 +144,34 @@ function renderLicenseSection(license) {
 
 
 /*
+ * renderQuestionsSection()
+ *
+ * A function that returns the Questions section for the README to 
+ * that reaches out to answer any questions by optionally providing a 
+ * github account with a link to that GitHub profile, and another option for
+ * an email account that provides a mailto link
+ * 
+ * If neither contact option is provided the Questions section is empty
+ * 
+ */
+function renderQuestionsSection(ghUser, emailUser) {
+  let questionsSectionText = '';
+  if ((ghUser) || (emailUser)) {
+    questionsSectionText = "If you have any questions, feel free to reach out: \n";
+
+    if (ghUser) {
+      questionsSectionText += `- GitHub: [${ghUser}](https://github.com/${ghUser})  \n`;
+    }
+
+    if (emailUser) {
+      questionsSectionText += `- Email: ${emailUser}`;
+    }
+  }
+  return questionsSectionText;
+}
+
+
+/*
  * renderLicenseSection()
  *
  * a function to generate markdown for the README using data from
@@ -159,8 +184,18 @@ function renderLicenseSection(license) {
  */
 
 function generateMarkdown(data) {
-  let licenseBadge = renderLicenseBadge(data.license);
-  let licenseSection = renderLicenseSection(data.license);
+  const licenseBadge = renderLicenseBadge(data.license);
+  const licenseSection = renderLicenseSection(data.license)
+  const questionsSection = renderQuestionsSection(data.questionsGitHubAcct, data.questionsEmail);;
+
+  // regex to replace all double spaces with 
+  //   double-spaces ( {2}) and a line feed: this is the markup convention 
+  //   for linefeeds
+  let description = data.description.replace(/ {2}/g, "  \n");
+  let installSteps = data.installSteps.replace(/ {2}/g, "  \n");
+  let usage = data.usage.replace(/ {2}/g, "  \n");
+  let tests = data.tests.replace(/ {2}/g, "  \n");
+  let contributing = data.contributing.replace(/ {2}/g, "  \n");
 
   // populate a template literal string with the user input to
   // represent the README content, then return the content here
@@ -169,13 +204,12 @@ function generateMarkdown(data) {
 
 ## Description
 
-${data.description}
+${description}
 
 ## Table of Contents
 
 - [Installation](#installation)
 - [Usage](#usage)
-- [Credits](#credits)
 - [License](#license)
 - [Contributing](#contributing)
 - [Tests](#tests)
@@ -184,23 +218,11 @@ ${data.description}
 
 ## Installation
 
-${data.installSteps}
+${installSteps}
 
 ## Usage
 
-${data.usage}
-
-![alt text](assets/images/screenshot.png)
-
-
-## Credits
-
-TODO
-List your collaborators, if any, with links to their GitHub profiles.
-
-If you used any third-party assets that require attribution, list the creators with links to their primary web presence in this section.
-
-If you followed tutorials, include links to those here as well.
+${usage}
 
 ## License
 
@@ -208,20 +230,16 @@ ${licenseSection}
 
 ## Contributing
 
-TODO
-If you created an application or package and would like other developers to contribute it, you can include guidelines for how to do so. The [Contributor Covenant](https://www.contributor-covenant.org/) is an industry standard, but you can always write your own if you'd prefer.
+${contributing}
 
 ## Tests
-TODO
+
+${tests}
 
 ## Questions
 
-TODO:
-WHEN I enter my GitHub username
-THEN this is added to the section of the README entitled Questions, with a link to my GitHub profile
+${questionsSection}
 
-WHEN I enter my email address
-THEN this is added to the section of the README entitled Questions, with instructions on how to reach me with additional questions
 `;
 }
 
