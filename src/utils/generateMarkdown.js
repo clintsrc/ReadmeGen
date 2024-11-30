@@ -189,6 +189,9 @@ function generateMarkdown(data) {
   //   double-spaces ( {2}) and a line feed: this is the markup convention 
   //   for linefeeds
   let description = data.description.replace(/ {2}/g, "  \n");
+  let installSteps = data.installSteps.replace(/ {2}/g, "  \n");
+  let usage = data.usage.replace(/ {2}/g, "  \n");
+  let tests = data.tests.replace(/ {2}/g, "  \n");
   let contributing = data.contributing.replace(/ {2}/g, "  \n");
 
   // populate a template literal string with the user input to
@@ -212,11 +215,11 @@ ${description}
 
 ## Installation
 
-${data.installSteps}
+${installSteps}
 
 ## Usage
 
-${data.usage}
+${usage}
 
 ## License
 
@@ -228,7 +231,7 @@ ${contributing}
 
 ## Tests
 
-${data.tests}
+${tests}
 
 ## Questions
 
