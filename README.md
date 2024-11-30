@@ -19,14 +19,15 @@ ReadmeGen uses nodejs and the "inquirer" dependency package to prompt you for in
 
 1. Change the project's root directory  
 2. Install the dependency modules: npm install  
-![alt text](assets/images/screenshot.png)
+![ReadmeGen screenshot](assets/images/screenshot.png)
 
 ## Usage
 
 1. Run: node src/index.js  
 2. Answer the prompts  
 3. View the generated README.md  
-[Demonstration Video](https://drive.google.com/file/d/1g8EP_mkyd3oHk4iQe3Qgrvbv_yjhvNCx/view)
+* See the [ReadmeGen Walkthrough](https://drive.google.com/file/d/1LaERyMDhP6-J8q0OTHyf95QkQvJzfBkp/view)  
+* Here's the walkthrough [output](examples/README.md) file
 
 ## License
 
