@@ -12,6 +12,7 @@
 
 function renderLicenseBadge(license) {
   let licenseBadge = '';
+  const licenseLink = renderLicenseLink(license);
 
   if (license) {
 
@@ -39,6 +40,8 @@ function renderLicenseBadge(license) {
         break;
       // default is already an empty string, no default case is needed
     }
+   // [![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
+    licenseBadge = `[${licenseBadge}](${licenseLink})`;
 
   }
 
