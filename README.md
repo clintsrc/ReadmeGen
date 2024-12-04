@@ -26,6 +26,8 @@ You can test drive one of the vehicles as long as you like. A Truck can tow othe
 1. Run: npm start
 2. Answer the prompts
 3. Choose 'Exit' when your're finished
+  
+* See the [OttosAutos Walkthrough](https://drive.google.com/file/d/1LaERyMDhP6-J8q0OTHyf95QkQvJzfBkp/view)
 
 ## License
 
