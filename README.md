@@ -1,9 +1,10 @@
 
-# ReadmeGen [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+# OttosAutos [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 ## Description
 
-ReadmeGen uses nodejs and the "inquirer" dependency package to prompt you for information used to generate a README.md file for your GitHub project.
+Otto's Autos provides various prompts that let you select a predefined Car, Truck or Motorbike. You have the option to customize one of your own.  
+You can test drive one of the vehicles as long as you like. A Truck can tow other vehicles, and a Motorbike can do a wheelie.
 
 ## Table of Contents
 
@@ -17,17 +18,14 @@ ReadmeGen uses nodejs and the "inquirer" dependency package to prompt you for in
 
 ## Installation
 
-1. Change the project's root directory  
-2. Install the dependency modules: npm install  
-![ReadmeGen screenshot](assets/images/screenshot.png)
+1. Change the project's root directory
+2. Install the dependency modules: npm install
 
 ## Usage
 
-1. Run: node src/index.js  
-2. Answer the prompts  
-3. View the generated README.md  
-* See the [ReadmeGen Walkthrough](https://drive.google.com/file/d/1LaERyMDhP6-J8q0OTHyf95QkQvJzfBkp/view)  
-* Here's the walkthrough [output](examples/README.md) file
+1. Run: npm start
+2. Answer the prompts
+3. Choose 'Exit' when your're finished
 
 ## License
 
@@ -44,9 +42,21 @@ Thank you for your contributions!
 
 ## Tests
 
-Test instructions:  
-1. Try generating a README with license, and another that has no license (select None).  
-2. For the contact questions try these account entry combinations: both, neither, github only, email only
+Test instructions:
+  
+Custom Vehicle:  
+1. Try creating a custom Car.  
+2. Try a custom Truck.  
+3. Try a custom Motorbike.
+  
+Towing  
+1. Try towing using a Truck  
+2. Try towing using a Car.  
+3. Try towing the truck you're using to tow!
+  
+Wheelie:  
+1. Try doing a wheelie with a Motorbike.  
+2. Try doing a wheelie with a Truck.
 
 ## Questions
 

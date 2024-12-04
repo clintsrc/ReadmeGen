@@ -14,7 +14,7 @@ import inquirer from 'inquirer';
 import fs from 'fs';
 import generateMarkdown from './utils/generateMarkdown.js';
 
-const DEBUG = false;
+const DEBUG = true;
 
 const banner =
     `
@@ -33,13 +33,13 @@ let defaultAnswers = [];
 
 if (DEBUG) {
     defaultAnswers = [
-        'ReadmeGen',
-        'ReadmeGen uses nodejs and the "inquirer" dependency package to prompt you for information used to generate a README.md file for your GitHub project.',
-        '1. Change the project\'s root directory  2. Install the dependency modules: npm install  ![ReadmeGen screenshot](assets/images/screenshot.png)',
-        '1. Run: node src/index.js  2. Answer the prompts  3. View the generated README.md  * See the [ReadmeGen Walkthrough](https://drive.google.com/file/d/1LaERyMDhP6-J8q0OTHyf95QkQvJzfBkp/view)  * Here\'s the walkthrough [output](examples/README.md) file',
+        'OttosAutos',
+        'Otto\'s Autos provides various prompts that let you select a predefined Car, Truck or Motorbike. You have the option to customize one of your own.  You can test drive one of the vehicles as long as you like. A Truck can tow other vehicles, and a Motorbike can do a wheelie.',
+        '1. Change the project\'s root directory\n2. Install the dependency modules: npm install',
+        '1. Run: npm start\n2. Answer the prompts\n3. Choose \'Exit\' when your\'re finished',
         'mit',
         'Guidelines:  Ensure your code follows the project\'s coding standards.  Write clear and concise commit messages.  If your changes include new features, please update the documentation accordingly.  If you are fixing a bug, please include a test to verify the fix.  Thank you for your contributions!',
-        'Test instructions:  1. Try generating a README with license, and another that has no license (select None).  2. For the contact questions try these account entry combinations: both, neither, github only, email only',
+        'Test instructions:\n  Custom Vehicle:  1. Try creating a custom Car.  2. Try a custom Truck.  3. Try a custom Motorbike.\n  Towing  1. Try towing using a Truck  2. Try towing using a Car.  3. Try towing the truck you\'re using to tow!\n  Wheelie:  1. Try doing a wheelie with a Motorbike.  2. Try doing a wheelie with a Truck.',
         'clintsrc',
         'clinton.alan.jones@gmail.com',
     ];
