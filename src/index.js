@@ -33,8 +33,8 @@ let defaultAnswers = [];
 
 if (DEBUG) {
     defaultAnswers = [
-        'ReadmeGen',
-        'ReadmeGen uses nodejs and the "inquirer" dependency package to prompt you for information used to generate a README.md file for your GitHub project.',
+        'WeatherOrNot',
+        'WeatherOrNot uses nodejs and the "inquirer" dependency package to prompt you for information used to generate a README.md file for your GitHub project.',
         '1. Change the project\'s root directory  2. Install the dependency modules: npm install  ![ReadmeGen screenshot](assets/images/screenshot.png)',
         '1. Run: node src/index.js  2. Answer the prompts  3. View the generated README.md  * See the [ReadmeGen Walkthrough](https://drive.google.com/file/d/1LaERyMDhP6-J8q0OTHyf95QkQvJzfBkp/view)  * Here\'s the walkthrough [output](examples/README.md) file',
         'mit',
