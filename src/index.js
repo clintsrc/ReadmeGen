@@ -14,7 +14,7 @@ import inquirer from 'inquirer';
 import fs from 'fs';
 import generateMarkdown from './utils/generateMarkdown.js';
 
-const DEBUG = false;
+const DEBUG = true;
 
 const banner =
     `
@@ -34,12 +34,12 @@ let defaultAnswers = [];
 if (DEBUG) {
     defaultAnswers = [
         'WeatherOrNot',
-        'WeatherOrNot uses nodejs and the "inquirer" dependency package to prompt you for information used to generate a README.md file for your GitHub project.',
-        '1. Change the project\'s root directory  2. Install the dependency modules: npm install  ![ReadmeGen screenshot](assets/images/screenshot.png)',
-        '1. Run: node src/index.js  2. Answer the prompts  3. View the generated README.md  * See the [ReadmeGen Walkthrough](https://drive.google.com/file/d/1LaERyMDhP6-J8q0OTHyf95QkQvJzfBkp/view)  * Here\'s the walkthrough [output](examples/README.md) file',
+        '__Weather or Not__ is an [Express.js](https://expressjs.com/) app that uses the [OpenWeather API](https://openweathermap.org/api) to display a city\'s current weather details and the 5-day forecast. This [Weather Or Not](https://weatherornot-j0iy.onrender.com/) project is built and hosted on [Render](https://render.com/). It uses [Vite](https://vite.dev/) to facilitate development builds.',
+        '1. Change the project\'s root directory  2. Install the dependency modules: npm install  3. Build using: npm run build',
+        'For the Development environment:  1. Add these environment variables to server/.env:  \tAPI_BASE_URL=https://api.openweathermap.org  \tAPI_KEY=&lt;generate an OpenWeather development api key to use here&gt;  2. Run the environment: npm run start:dev    For a production deployment on Render:  1. Set the environment variables in the cloud environment:  \tAPI_BASE_URL=https://api.openweathermap.org  \tAPI_KEY=&lt;generate an OpenWeather production api key to use here&gt;  2. Run the build: npm run render-build  3. Start the app: npm run start  Visit the [Weather Or Not](https://weatherornot-j0iy.onrender.com/) site to see it in action!  ![WeatherOrNot screenshot](examples/WeatherOrNot.png) ',
         'mit',
-        'Guidelines:  Ensure your code follows the project\'s coding standards.  Write clear and concise commit messages.  If your changes include new features, please update the documentation accordingly.  If you are fixing a bug, please include a test to verify the fix.  Thank you for your contributions!',
-        'Test instructions:  1. Try generating a README with license, and another that has no license (select None).  2. For the contact questions try these account entry combinations: both, neither, github only, email only',
+        'Guidelines:  Ensure your code follows the project\'s coding standards.  Write clear and concise commit messages.  If your changes include new features, please update the documentation accordingly.  If you are fixing a bug, please include a test to verify the fix.    Thank you for your contributions!    Thanks to [Justin Moore](https://github.com/Jmo5896) for help with a deployment issue and some of the data formatting.',
+        'Test instructions:  1. Try entering a valid city name.  2. Try entering an invalid city name  Note that the OpenWeather API appears to handle fuzzy lookups, but an example of an invalid city is: !!!.  3. Support open source using [Insomnia](https://insomnia.rest/) to investigate the Weather REST API.',
         'clintsrc',
         'clinton.alan.jones@gmail.com',
     ];
