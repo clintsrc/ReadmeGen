@@ -14,7 +14,7 @@ import inquirer from 'inquirer';
 import fs from 'fs';
 import generateMarkdown from './utils/generateMarkdown.js';
 
-const DEBUG = false;
+const DEBUG = true;
 
 const banner =
     `
@@ -33,13 +33,13 @@ let defaultAnswers = [];
 
 if (DEBUG) {
     defaultAnswers = [
-        'ReadmeGen',
-        'ReadmeGen uses nodejs and the "inquirer" dependency package to prompt you for information used to generate a README.md file for your GitHub project.',
-        '1. Change the project\'s root directory  2. Install the dependency modules: npm install  ![ReadmeGen screenshot](assets/images/screenshot.png)',
-        '1. Run: node src/index.js  2. Answer the prompts  3. View the generated README.md  * See the [ReadmeGen Walkthrough](https://drive.google.com/file/d/1LaERyMDhP6-J8q0OTHyf95QkQvJzfBkp/view)  * Here\'s the walkthrough [output](examples/README.md) file',
+        'HR1985',
+        '__HR 1985__ is an application that tracks employee roles and department information in a PostgreSQL database. Database access is driven through command line input using the node pg and inquirer packages',
+        '1. Change the project\'s root directory  2. Install the dependency modules: npm install  3. Build using: npm run build  4. Set your postgres credentials in the .env file (see the .env.EXAMPLE FILE) 5. Install the schema: pgsql -U postgres -f db/schema.sql  6. __Optional__ seed the database with test data: pgsql -U postgres -f db/seeds.sql',
+        'See the walkthrough video here!  1. Build and run the application from the project root directory: npm run start.  2. Follow the menu prompts.',
         'mit',
-        'Guidelines:  Ensure your code follows the project\'s coding standards.  Write clear and concise commit messages.  If your changes include new features, please update the documentation accordingly.  If you are fixing a bug, please include a test to verify the fix.  Thank you for your contributions!',
-        'Test instructions:  1. Try generating a README with license, and another that has no license (select None).  2. For the contact questions try these account entry combinations: both, neither, github only, email only',
+        'Guidelines:  Ensure your code follows the project\'s coding standards.  Write clear and concise commit messages.  If your changes include new features, please update the documentation accordingly.  If you are fixing a bug, please include a test to verify the fix.    Thank you for your contributions!    Thanks to [Justin Moore](https://github.com/Jmo5896) for help with a deployment issue and some of the data formatting.',
+        'Test instructions:  1. Try each of the menu items.  2. Make sure that any data you add is correctly reflected in all relevant screens that display the current data',
         'clintsrc',
         'clinton.alan.jones@gmail.com',
     ];
