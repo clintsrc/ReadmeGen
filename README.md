@@ -1,9 +1,9 @@
 
-# ReadmeGen [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+# Clinton Jones Portfolio [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 ## Description
 
-ReadmeGen uses nodejs and the "inquirer" dependency package to prompt you for information used to generate a README.md file for your GitHub project.
+My React online portfolio is a site where you can find my projects, their technologies, and a bit about my journey as a developer.
 
 ## Table of Contents
 
@@ -18,16 +18,14 @@ ReadmeGen uses nodejs and the "inquirer" dependency package to prompt you for in
 ## Installation
 
 1. Change the project's root directory  
-2. Install the dependency modules: npm install  
-![ReadmeGen screenshot](assets/images/screenshot.png)
+2. Install the dependency modules: npm install
 
 ## Usage
 
-1. Run: node src/index.js  
-2. Answer the prompts  
-3. View the generated README.md  
-* See the [ReadmeGen Walkthrough](https://drive.google.com/file/d/1LaERyMDhP6-J8q0OTHyf95QkQvJzfBkp/view)  
-* Here's the walkthrough [output](examples/README.md) file
+1. Run: npm run dev  
+2. Browse to the running app at: https://localhost:3000/  
+* See the active Portfolio site hosted [here](https://clintonjones.netlify.app/) on Netlify  
+![Portfolio screenshot](assets/images/screenshot.png)
 
 ## License
 
