@@ -34,12 +34,14 @@ This application is covered under the [MIT](https://opensource.org/licenses/MIT)
 ## Contributing
 
 Guidelines:  
-Feel free to use the source as an example for your own site.  
-Thanks to Francisco Rivera for a little help getting started with bootstrap.  
-Here are some helpful resources:  
-Netlify: https://www.netlify.com  
-Coolers: https://coolors.co/  
-Others appear in the code comments
+Feel free to use the source as an example for your own site.   
+Here are some helpful resources, check the code comments for more details:  
+[![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)](https://react.dev/)  
+[![bootstrap](https://img.shields.io/badge/Bootstrap-563D7C?style=for-the-badge&logo=bootstrap&logoColor=white)](https://getbootstrap.com/)  
+[![Netlify Status](https://api.netlify.com/api/v1/badges/b97233e0-f15a-47e6-b3e9-09a155c473d7/deploy-status)](https://app.netlify.com/sites/clintonjones/deploys)  
+[Coolers](https://coolors.co/): color schemes  
+  
+Thanks to TA Francisco Rivera for a little help getting started with bootstrap. 
 
 ## Tests
 
