@@ -36,10 +36,10 @@ if (DEBUG) {
         'Clinton Jones Portfolio',
         'My React online portfolio is a site where you can find my projects, their technologies, and a bit about my journey as a developer.',
         '1. Change the project\'s root directory  2. Install the dependency modules: npm install',
-        '1. Run: npm run dev  2. Browse to the running app at: https://localhost:3000/  * See my active Portfolio site deployed on Netlify [here](https://clintonjones.netlify.app/)  ![Portfolio screenshot](assets/images/screenshot.png)',
+        '1. Run: npm run dev  2. Browse to the running app at: http://localhost:3000/  * See my active Portfolio site deployed on Netlify [here](https://clintonjones.netlify.app/)  ![Portfolio screenshot](assets/images/app-cj-portfolio.png)',
         'mit',
-        'Guidelines:  Ensure your code follows the project\'s coding standards.  Write clear and concise commit messages.  If your changes include new features, please update the documentation accordingly.  If you are fixing a bug, please include a test to verify the fix.  Thank you for your contributions!',
-        'Test instructions:  1. Try generating a README with license, and another that has no license (select None).  2. For the contact questions try these account entry combinations: both, neither, github only, email only',
+        'Guidelines:  Feel free to use the source as an example for your own site.  Thanks to Francisco Rivera for a little help getting started with bootstrap.  Here are some helpful resources:  Netlify: https://www.netlify.com  Coolers: https://coolors.co/  Others appear in the code comments',
+        'Test instructions:  1. Try using valid data, invalid data, and missing data on the Contacts form submission  2. Validate the header route links to the expected page and the color styles change accordingly.  3. Test the footer links  3. Test the links in each project on the Portfolio page.  NOTE: if the active site doesn\'t load immediately, try again in a few minutes after the Render site spins up.',
         'clintsrc',
         'clinton.alan.jones@gmail.com',
     ];
