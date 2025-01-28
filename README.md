@@ -1,9 +1,9 @@
 
-# ReadmeGen [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+# In Your Lane [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 ## Description
 
-ReadmeGen uses nodejs and the "inquirer" dependency package to prompt you for information used to generate a README.md file for your GitHub project.
+A Kanban board application featuring secure server-side authentication using JWT (JSON Web Token).
 
 ## Table of Contents
 
@@ -18,16 +18,16 @@ ReadmeGen uses nodejs and the "inquirer" dependency package to prompt you for in
 ## Installation
 
 1. Change the project's root directory  
-2. Install the dependency modules: npm install  
-![ReadmeGen screenshot](assets/images/screenshot.png)
+2. Install the dependency modules: npm install
 
 ## Usage
 
-1. Run: node src/index.js  
-2. Answer the prompts  
-3. View the generated README.md  
-* See the [ReadmeGen Walkthrough](https://drive.google.com/file/d/1LaERyMDhP6-J8q0OTHyf95QkQvJzfBkp/view)  
-* Here's the walkthrough [output](examples/README.md) file
+1. Change the project's root directory  
+2. Run: npm run dev  
+3. Browse to the running app at: http://localhost:3000/  
+* See the active site deployed on Render [here](TBD)  
+Note that it takes a couple of minutes to spin up  
+![screenshot](assets/images/screenshot.jpg)
 
 ## License
 
@@ -45,8 +45,14 @@ Thank you for your contributions!
 ## Tests
 
 Test instructions:  
-1. Try generating a README with license, and another that has no license (select None).  
-2. For the contact questions try these account entry combinations: both, neither, github only, email only
+1. Try using the reject and save buttons on the search page.  
+2. On the saved page ensure the list is updated from the search page additons.  
+3. Try the image and email links.  
+4. Try removing candidates until the list is empty.  
+5. Test the sort opton.  
+6. Try filtering on text in one of the bio fields.  
+7. Try filtering on a nonexisting text string.  
+8. Clear the filter to be sure the saved candidates are visible again.
 
 ## Questions
 
