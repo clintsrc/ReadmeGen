@@ -1,9 +1,9 @@
 
-# SNAPI [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+# Reshelve [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 ## Description
 
-SNAPI simulates a social network web application where users can share their thoughts, react to friends' thoughts, and create a friend list. It uses Express.js for routing, a MongoDB database, the Mongoose ODM and displays timestamps using the dayjs library.
+Reshelve is a MERN application using the Google Books API to manage a list of saved books in MongoDB with Mongoose ODM and supports JWT authentication. Originally it used a RESTful API, but has been refactored for Apollo server and the GraphQL API.
 
 ## Table of Contents
 
@@ -20,11 +20,11 @@ SNAPI simulates a social network web application where users can share their tho
 1. Change the project's root directory  
 2. Install the dependency modules: npm install  
 3. Build: npm run build  
-![SNAPI screenshot](Assets/images/screenshot.png)
+![Reshelve screenshot](Assets/images/screenshot.png)
 
 ## Usage
 
-1. Start the server: npm run start  
+1. Start the server: npm run start:dev  
 2. See the ![spec](Assets/decs/spec.md) for details of the original requirements  
 3. Use a RESTful API tool to send HTTP requests. For examples you can import this ![Insomnia test](Assets/test/SNAPI-REST.ext) configuration  
 * See the [SNAPI Walkthrough video](https://drive.google.com/TBD)
