@@ -5,6 +5,13 @@
 
 Reshelve is a MERN application using the Google Books API to manage a list of saved books in MongoDB with Mongoose ODM and supports JWT authentication. Originally it used a RESTful API, but has been refactored for Apollo server and the GraphQL API.
 
+[![Apollo GraphQL](https://img.shields.io/badge/Apollo%20GraphQL-311C87?&style=for-the-badge&logo=Apollo%20GraphQL&logoColor=white)](https://www.apollographql.com/) 
+[![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)](https://react.dev/) 
+[![JWT](https://img.shields.io/badge/JWT-000000?style=for-the-badge&logo=JSON%20web%20tokens&logoColor=white)](https://www.npmjs.com/package/jsonwebtoken) 
+[![Express.js](https://img.shields.io/badge/Express%20js-000000?style=for-the-badge&logo=express&logoColor=white)](https://expressjs.com/) 
+[![MongoDB](https://img.shields.io/badge/MongoDB-4EA94B?style=for-the-badge&logo=mongodb&logoColor=white)](https://www.mongodb.com/) 
+[![Font Awesome](https://img.shields.io/badge/Font_Awesome-339AF0?style=for-the-badge&logo=fontawesome&logoColor=white)](https://fontawesome.com/) [![Render](https://img.shields.io/badge/Render-CI/CD-blue)](https://dashboard.render.com/) 
+
 ## Table of Contents
 
 - [Installation](#installation)
@@ -18,16 +25,19 @@ Reshelve is a MERN application using the Google Books API to manage a list of sa
 ## Installation
 
 1. Change the project's root directory  
-2. Install the dependency modules: npm install  
-3. Build: npm run build  
-![Reshelve screenshot](Assets/images/screenshot.png)
+1. Install the dependency modules: npm install  
+1. Create the MongoDB database:
+   - Create a server/.env (refer to the .env.EXAMPLE located there)
+   - Set the database name and a random JWT password
+1. Build: npm run build  
 
 ## Usage
 
 1. Start the server: npm run start:dev  
-2. See the ![spec](Assets/decs/spec.md) for details of the original requirements  
-3. Use a RESTful API tool to send HTTP requests. For examples you can import this ![Insomnia test](Assets/test/SNAPI-REST.ext) configuration  
-* See the [SNAPI Walkthrough video](https://drive.google.com/TBD)
+1. See the ![spec](client/src/assets/docs/spec.md) for details of the original requirements  
+* See the active site deployed on Render [here](https://inyourlane.onrender.com)  
+Note that it takes a couple of minutes to spin up  
+![Reshelve screenshot](client/src/assets/images/screenshot.jpg)
 
 ## License
 
@@ -45,8 +55,17 @@ Thank you for your contributions!
 ## Tests
 
 Test instructions:  
-1. Add to the existing HTTP requests in the Insomnia configuration.  
-2. Test any new CRUD routes you add and execute the existing suite. Pay particular attention to any existing routes that would be effected by your changes.
+1. Search for a title on the search page. Expect no Save button is available when you are not logged in.  
+1. Verify that only Search and Login/Sign Up options are avilable  
+1. Create a new user from the login Signup. Expect a successful account creation unless information is missing or an invalid email is specified.  Expect to see additional options for See Your (saved) Books and only the Logout option.  
+1. Log out, log back in with the new account. Expect that you can login successfully with a valid account  
+1. Check the saved books. Expect it to be empty if this is none have been added at this point.  
+1. Search for books, add them with the Save this Book button. Expect the button text to change to This book has already been saved.  
+1. Navigate to the saved books screen. Expect to see the saved books populated there.  
+1. Delete a title by clicking on Delete this Book. Expect the title to be removed from the saved books screen.  
+1. Save another title to populate the saved books list. Navigate to the saved books screen. Delete the id_token from your browser's local storage (this will also test an expired token without having to wait the entire expiry time). Try to delete the title. You should not have access to delete the title. Try adding another title. You should not be able to add it without a valid authentication.  
+1. Login one more time to ensure that a new id_token is created. You should have access to add and remove titles in your list again.  
+* Use the [Apollo Playground](http://localhost:3001/graphql) tool to test the routes while the server is running.  
 
 ## Questions
 
