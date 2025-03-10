@@ -4,7 +4,9 @@
 ## Description
 
 Solid Guess is a MERN application that has been enhanced with Cypress end-to-end and component testing.  
-[![Cypress](https://img.shields.io/badge/Font_Awesome-339AF0?style=for-the-badge&logo=fontawesome&logoColor=white)](https://fontawesome.com/)  
+  
+[![MongoDB](https://img.shields.io/badge/MongoDB-4EA94B?style=for-the-badge&logo=mongodb&logoColor=white)](https://www.mongodb.com/) [![Express.js](https://img.shields.io/badge/Express%20js-000000?style=for-the-badge&logo=express&logoColor=white)](https://expressjs.com/) [![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)](https://react.dev/) [![Node.js](https://img.shields.io/badge/Node%20js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white)](https://nodejs.org/en)  
+[![Cypress](https://img.shields.io/badge/Cypress-17202C?style=for-the-badge&logo=cypress&logoColor=white)](https://www.cypress.io/)  
 [![Font Awesome](https://img.shields.io/badge/Font_Awesome-339AF0?style=for-the-badge&logo=fontawesome&logoColor=white)](https://fontawesome.com/)  
 
 
@@ -32,9 +34,9 @@ Solid Guess is a MERN application that has been enhanced with Cypress end-to-end
 
 1. Change to the project's root directory  
 2. Start the application: npm run start:dev  
-3. Refer to the [Tests](#tests) section to execute Cypress tests.  
+3. Refer to the [Tests](#tests) section to execute the Cypress tests.  
 4. See the [spec](client/assets/docs/spec.md) for details of the original requirements  
-* See the [Solid Guess Walkthrough video](https://drive.google.com/TBD)  
+* See the [Solid Guess Walkthrough video](https://drive.google.com/file/d/1xETFAwS45cJ-MPmlHr3GEqDM5AXR7gRr/view?usp=drive_link)  
 * ![Solid Guess screenshot](client/assets/images/screenshot.png)
 
 ## License
@@ -54,8 +56,9 @@ Thank you for your contributions!
 
 Test instructions:  
 1. Change to the project's root directory  
-2. Run the tests in console mode: npm run test  
-3. To launch the test runner UI instead use: npm run test-gui
+2. Cypress requires the application under test to be running (see [Usage](#usage))  
+3. Run the tests in console mode: npm run test  
+4. To launch the test runner UI instead use: npm run test-gui
 
 ## Questions
 
