@@ -23,7 +23,7 @@ ReadmeGen uses nodejs and the "inquirer" dependency package to prompt you for in
 
 ## Usage
 
-1. Run: node src/index.js  
+1. Run: npm run build  
 2. Answer the prompts  
 3. View the generated README.md  
 * See the [ReadmeGen Walkthrough](https://drive.google.com/file/d/1LaERyMDhP6-J8q0OTHyf95QkQvJzfBkp/view)  
