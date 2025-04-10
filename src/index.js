@@ -38,7 +38,7 @@ if (DEBUG) {
     "1. Change to the project's root directory  2. Start the application: npm run dev  3. Refer to the [Tests](#tests) section to execute the Cypress tests.  4. See the [spec](client/assets/docs/spec.md) for details of the original requirements  * See the active site deployed on Render [here](https://cash-is-king-crm.onrender.com/)  ![Cash Is King CRM screenshot](client/assets/images/screenshot.png)",
     "mit",
     "Guidelines:  Ensure your code follows the project's coding standards.  Write clear and concise commit messages.  If your changes include new features, please update the documentation accordingly.  If you are fixing a bug, please include a test to verify the fix.  Thank you for your contributions!",
-    "Test instructions:  1. Change to the project's root directory  2. Cypress requires the application under test to be running (see [Usage](#usage))  3. Run the tests in console mode: npm run test  4. To launch the test runner UI instead use: npm run test-gui",
+    "Test instructions:  1. Change to the project's root directory  2. Cypress requires the application under test to be running (see [Usage](#usage))  3. Run the tests in console mode: npm run test  4. To launch the test runner UI instead use: npm run test-gui  - Ethan Boud  - GitHub: [ethanboud](https://github.com/ethanboud)  - Email: ethanboud@gmail.com    - Wilson Crase:  - GitHub: [Mixxuhh](https://github.com/Mixxuhh)  - Email: wwcrase@gmail.com    - Tanner Flake:  - GitHub: [tannerflake](https://github.com/tannerflake)  - Email: tannerflake@gmail.com    - Clint Jones  - GitHub: [clintsrc](https://github.com/clintsrc)  - Email: clinton.alan.jones@gmail.com",
     "clintsrc",
     "clinton.alan.jones@gmail.com",
   ];

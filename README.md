@@ -57,7 +57,22 @@ Test instructions:
 1. Change to the project's root directory  
 2. Cypress requires the application under test to be running (see [Usage](#usage))  
 3. Run the tests in console mode: npm run test  
-4. To launch the test runner UI instead use: npm run test-gui
+4. To launch the test runner UI instead use: npm run test-gui  
+- Ethan Boud  
+- GitHub: [ethanboud](https://github.com/ethanboud)  
+- Email: ethanboud@gmail.com  
+  
+- Wilson Crase:  
+- GitHub: [Mixxuhh](https://github.com/Mixxuhh)  
+- Email: wwcrase@gmail.com  
+  
+- Tanner Flake:  
+- GitHub: [tannerflake](https://github.com/tannerflake)  
+- Email: tannerflake@gmail.com  
+  
+- Clint Jones  
+- GitHub: [clintsrc](https://github.com/clintsrc)  
+- Email: clinton.alan.jones@gmail.com
 
 ## Questions
 
